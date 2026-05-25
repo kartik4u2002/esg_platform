@@ -1,0 +1,62 @@
+# ─── Environment & Secrets ─────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# ─── Python & Django ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+db.sqlite3
+db.sqlite3-journal
+
+# Django media & static collected directories
+backend/media/
+backend/staticfiles/
+backend/client_secrets.json
+
+# ─── Celery ────────────────────────────────────────────────────────
+celerybeat-schedule
+celerybeat.pid
+
+# ─── Node / Frontend ───────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ─── Log files ─────────────────────────────────────────────────────
+*.log
+*.log.*
+
+# ─── IDEs, Editors & OS ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
