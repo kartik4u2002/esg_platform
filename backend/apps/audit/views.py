@@ -73,6 +73,11 @@ class AuditExportView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    def perform_content_negotiation(self, request, force=False):
+        # Bypass content negotiation to prevent DRF from raising 404 on format=csv
+        from rest_framework.renderers import JSONRenderer
+        return (JSONRenderer(), 'application/json')
+
     @extend_schema(
         parameters=[
             OpenApiParameter(
