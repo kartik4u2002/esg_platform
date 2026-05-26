@@ -34,6 +34,17 @@ docker-compose exec web python manage.py seed_demo_data
 
 ---
 
+## Production Deployment (AWS)
+
+The platform is deployed live on an **AWS EC2** instance at **[https://esg.monster](https://esg.monster)**, utilizing **Traefik** for automated Let's Encrypt SSL termination and reverse proxying.
+
+To spin up the production stack:
+```bash
+docker-compose -f docker-compose.prod.yml --env-file .env.production up -d --build
+```
+
+---
+
 ## Demo Credentials
 
 | Role     | Email                | Password    | Permissions                    |
