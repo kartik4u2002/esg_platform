@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 !.env.production.example
+*.pem
 
 # ─── Python & Django ───────────────────────────────────────────────
 __pycache__/
