@@ -45,6 +45,14 @@ docker-compose -f docker-compose.prod.yml --env-file .env.production up -d --bui
 
 ---
 
+## Sample Datasets
+
+The following sample CSV files are included in the repository root for testing the ingestion system:
+* **[spend_analysis_dataset.csv](file:///d:/Audit_system/esg_platform/spend_analysis_dataset.csv)**: Example procurement transaction dataset that can be used to test SAP Procurement (Scope 1) ingestion.
+* **[smart_meter_data.csv](file:///d:/Audit_system/esg_platform/smart_meter_data.csv)**: Example smart meter electricity consumption dataset that can be used to test Utility Electricity (Scope 2) ingestion.
+
+---
+
 ## Demo Credentials
 
 | Role     | Email                | Password    | Permissions                    |
