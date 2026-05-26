@@ -16,6 +16,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - DOCKER_API_VERSION=1.44
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "letsencrypt_data:/letsencrypt"
@@ -50,7 +52,7 @@ services:
     command: >
       sh -c "python manage.py collectstatic --noinput &&
              python manage.py migrate --noinput &&
-             gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+             gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 2"
     volumes:
       - media_files_prod:/app/media
       - static_files_prod:/app/staticfiles
@@ -70,7 +72,7 @@ services:
   worker:
     build: ./backend
     restart: always
-    command: celery -A config worker -Q pipeline,ingestion -l info --concurrency 4
+    command: celery -A config worker -Q pipeline,ingestion -l info --concurrency 1
     volumes:
       - media_files_prod:/app/media
     env_file: .env.production
